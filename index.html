@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <title>Главная</title>
+    <meta charset="UTF-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- для раб прогеров отдельно от нас. редко нужен. устаревший  -->
+    <link rel="stylesheet" href="/css/custom.css" />
+    <link rel="shortcut icon" href="favicon.ico" />
+    <!-- <meta name="robots" content="noindex, nofollow"> -->
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"> -->
+    <!-- для адапт вёрстки -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <!-- подкл доп файлов - шапка -->
+      <header class="header">
+	<div class="container">
+		<div class="header__row">
+			<!-- 
+				html меню с иконкой бургера
+				<div class="header__menu menu">
+					<div class="menu__icon icon-menu">
+						<span></span>
+						<span></span>
+						<span></span>
+					</div>
+					<nav class="menu__body">
+						<ul class="menu__list">
+							<li><a href="" class="menu__link"></a></li>
+						</ul>
+					</nav>
+				</div>
+			 -->
+		</div>
+	</div>
+</header>
+      <div class="block sector">
+        <div class="container">
+          <!-- popap - всплывающие окна, уже сделаны, настроены, нужны доп. визуал стили и вызвать  -->
+          <!-- вызов - добавить класс pl(popap link) + в href="" написать #(диес) и имя popap(callback).-->
+          <!-- продолжение >> в popup.html и popup.js -->
+          <a href="#callback" class="block__link pl">Попап</a>
+          <br />
+          <br />
+          <!-- tabуляция - вкладки, при нажатии на которые попеременно появляется контент -->
+          <!-- добавить .tabs родителем всего блока(подвязан на js) -->
+          <!-- иерархия - навигация>вкладки№^элементы>контент№ -->
+          <!-- добавить ко вкладкам tab__navitem, к контенту tab__item.  -->
+          <!-- active - выбор по умолчанию -->
+          <!-- продолжение ui.scss (~220-268)- и script.js(~160-173)-> -->
+          <div class="block__tabs tabs">
+            <!-- навигационая часть -->
+            <nav class="nav__block">
+              <!-- две вкладки -->
+              <div class="nav__block-item tab__navitem active">Первая</div>
+              <div class="nav__block-item tab__navitem">Вторая</div>
+            </nav>
+            <!-- блок с элементами -->
+            <div class="cont__block">
+              <!-- два контента -->
+              <div class="cont__block-item tab__item active">
+                TEXT 1: Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Laudantium excepturi autem unde architecto, a mollitia?
+              </div>
+              <div class="cont__block-item tab__item">
+                TEXT 2: Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Ut, veritatis. Lorem ipsum dolor sit amet consectetur
+                adipisicing elit. Aliquid, quo provident tempore accusamus
+                possimus ratione illo modi iusto rerum similique.
+              </div>
+            </div>
+          </div>
+          <br />
+          <br />
+          <!-- сполер - при нажатии появляется контент(js добавл .active) -->
+          <!-- структура - блок>подблок>title+text -->
+          <!-- добавить к title .spoller -->
+          <!-- аккордеон - закрытие сполера при отрытие другого. добавить в titlЫ .closeall -->
+          <!-- продолжение ui.scss (~269-292)- и script.js(~174-192)-> -->
+          <div class="block__spollers spollers">
+            <!-- сам сполер. один -->
+            <div class="spollers__item">
+              <div class="spollers__title spoller closeall">Открой меня</div>
+              <div class="spollers__text">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Facilis inventore optio, eveniet culpa nesciunt odio eum
+                necessitatibus debitis natus fugiat molestias doloremque
+                molestiae nulla atque minima veniam enim quidem. Ut.
+              </div>
+            </div>
+            <br />
+            <!-- второй сполер -->
+            <div class="spollers__item">
+              <div class="spollers__title spoller closeall">Открой меня</div>
+              <div class="spollers__text">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Facilis inventore optio, eveniet culpa nesciunt odio eum
+                necessitatibus debitis natus fugiat molestias doloremque
+                molestiae nulla atque minima veniam enim quidem. Ut.
+              </div>
+            </div>
+          </div>
+          <br />
+          <br />
+          <!-- формы -->
+          <form action="#" class="block__form form-block">
+            <!-- input -->
+            <div class="form-block-item">
+              <!-- .input прописан в forms.scss.(inp+tab ~128-155)  -->
+              <!-- атрибут data-value - различные js действия, в том числе placeholder -->
+              <input
+                autocomplete="off"
+                type="text"
+                name="form[]"
+                data-value="Введи чё нить"
+                class="input"
+              />
+            </div>
+            <!-- checkbox -->
+            <div class="form-block-item">
+              <!-- checkbox -->
+              <div class="check">
+                Text
+                <!-- checkbox прописан в forms.scss.(chk+tab ~157-183) и forms.js(363-382) -->
+                <input type="checkbox" value="1" name="form[]" />
+              </div>
+              <div class="check">
+                Text
+                <input type="checkbox" value="1" name="form[]" />
+              </div>
+              <div class="check">
+                Text
+                <input type="checkbox" value="1" name="form[]" />
+              </div>
+            </div>
+            <!-- радио кнопки -->
+            <div class="form-block-item">
+              <!-- радио кнопки. отделн блок рад.кноп. с индив именем -->
+              <!-- .options прописан в forms.scss.(opt+tab ~185-217) и forms.js(384-400) -->
+              <div class="options">
+                <!-- первая рад.кн -->
+                <div class="option active">
+                  Новинки!
+                  <input type="radio" value="1" name="form[type]" />
+                </div>
+                <!-- вторая рад.кн. уже не active  -->
+                <div class="option">
+                  Новинки 2!
+                  <input type="radio" value="2" name="form[type]" />
+                </div>
+              </div>
+            </div>
+            <!-- select -->
+            <div class="form-block-item">
+              <!-- .select прописан в forms.scss.(sel+tab ~44-143) и forms.js(4-221) -->
+              <!-- для scrolla(бегунка перемотки), подкл в vendors.js(из JS.txt) доп файл jquery.nicescroll.min.js (описание https://github.com/inuyaksa/jquery.nicescroll). Настройки forms.js(~12-23) -->
+              <!-- в <selest>, в class пишем название блока(form-block). class __select допишет js -->
+              <select name="form[]" id="" class="form-block">
+                <option value="1" selected="selected">Пункт №1</option>
+                <option value="2">Пункт №2</option>
+                <option value="3">Пункт №3</option>
+                <option value="4">Пункт №4</option>
+                <option value="5">Пункт №5</option>
+                <option value="6">Пункт №6</option>
+                <option value="7">Пункт №7</option>
+              </select>
+            </div>
+          </form>
+          <br />
+          <br />
+        </div>
+      </div>
+      <!-- подкл доп файлов - подвал -->
+      <footer class="footer">
+	<div class='container'>
+		<div class="footer__row">
+			
+		</div>
+	</div>
+</footer>
+    </div>
+    <!-- подкл доп файлов -  окна -->
+    <!-- добавл класс popup-имя
+  (для создания др popup, копир div .popup.popup-имя с дочерними тегами меняя имя). -->
+<div class="popup popup-callback ms_1">
+  <!-- таблицами построеная конструкция. временый но надежный вариант -->
+  <div class="popup-table table">
+    <div class="cell">
+      <!-- сам popup -->
+      <div class="popup-content">
+        <!-- закрытие popup -->
+        <div class="popup-close">1</div>
+        <!-- заголовок -->
+        <div class="popup__title">2</div>
+        <div class="popup__txt">3</div>
+        <!-- простая форма, чаще всего используемая как форма обратной связи -->
+        <form action="#" class="popup-form form">
+          <div class="form-input">
+            <input
+              autocomplete="off"
+              type="text"
+              name="form[]"
+              data-value=""
+              class="input"
+            />
+          </div>
+          <div class="form-input">
+            <input
+              autocomplete="off"
+              type="text"
+              name="form[]"
+              data-value=""
+              class="input req email"
+            />
+          </div>
+          <div class="form-input">
+            <input
+              autocomplete="off"
+              type="text"
+              name="form[]"
+              data-value=""
+              class="input req"
+            />
+          </div>
+          <div class="form-button">
+            <button type="submit" class="form__btn btn fw"></button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="popup popup-message ms_1">
+  <div class="popup-table table">
+    <div class="cell">
+      <div class="popup-content">
+        <div class="popup-close"></div>
+        <div class="popup__title"></div>
+        <div class="popup__txt">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti
+          quae nobis neque nam quidem. Dolorum repellendus, voluptatibus animi
+          debitis! Similique dolorum facilis iusto atque laborum minima omnis
+          ipsam rerum ab!
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="popup popup-video">
+  <div class="popup-table table">
+    <div class="cell">
+      <div class="popup-close"></div>
+      <div class="popup-video__value video"></div>
+    </div>
+  </div>
+</div>
+
+    <!-- подкл файлов - script js -->
+    <!-- подкл доп файлов script js -->
+<!-- jquery -->
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<!-- миграция из старого кода 2.0 в новый 3.0 -->
+<!-- <script src="https://code.jquery.com/jquery-migrate-3.0.1.min.js"></script> -->
+<!-- дополнения к jquery(слайдер,скрол, библиотеки) -->
+<!-- <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://maps.google.com/maps/api/js?sensor=false&amp;key="></script> -->
+<script src="js/vendors.js"></script>
+<!-- сбор всех написаных js файлов -->
+<script src="js/main.js"></script>
+<!-- для раб прогеров отдельно от нас -->
+<script src="js/custom.js"></script>
+
+  </body>
+</html>
