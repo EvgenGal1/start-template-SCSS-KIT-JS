@@ -31,8 +31,10 @@ function forms() {
         mss = 1;
       }
       var opt = {
+        // цвет скрола
         cursorcolor: "#2078e5",
         cursorcolor: "#9B4E7C",
+        // ширина скрола
         cursorwidth: "13px",
         background: "",
         autohidemode: false,

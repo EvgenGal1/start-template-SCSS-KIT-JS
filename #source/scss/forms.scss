@@ -19,17 +19,68 @@
 // док класс блока формы
 .form-block {
   // дочерние элементы
-  &-item {
-    display: flex;
+  &__item {
     margin: 0px 0px 20px 0px;
     .check {
+      display: inline-block;
       margin: 0px 10px;
     }
   }
 }
 //</FORM>====================================================================================================
 
-//<BUTTONS (a.?btn+tab)>====================================================================================================
+//<INPUT (inp+tab)>====================================================================================================
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  color: #330f0f;
+}
+.input {
+  border: 1px solid #000;
+  height: 50px;
+  border-radius: 0 !important;
+  margin: 0px 0px 20px 0px;
+  width: 100%;
+  display: block;
+  padding: 0px 20px;
+  &.focus {
+  }
+  &.err {
+    border: 3px solid red;
+  }
+}
+.phone {
+  // border-image: url(/img/icons/ui-icons.png);
+  // width: 200px;
+  // height: 200px;
+  background: #f5f240;
+  border: 5px solid #f0d900;
+  // border-radius: 10px 150px 30px 150px !important;
+  outline: 5px solid #e3e3e3;
+}
+.email {
+  border: 5px solid #aa6969;
+  outline: 5px solid #ffe353;
+}
+// в input, доп .l выносит data-value в отдельный лейбл
+.form__label {
+  background-color: #0f0;
+}
+.form__error {
+  color: #f00;
+  outline: 5px dashed #f00;
+}
+textarea.input {
+  resize: none;
+  padding: 0px 0px;
+}
+//</INPUT>====================================================================================================
+
+//<BUTTONS (btn+tab)>====================================================================================================
 .btn {
   display: inline-block;
   padding: 0px 0px;
@@ -96,8 +147,8 @@
     display: none;
     overflow: hidden;
     min-width: 100%;
-    background-color: #dedede;
-    border: 1px solid #888888;
+    background-color: #ffff1a;
+    // border: 1px solid #11a0a0;
     padding: 10px 20px 10px 25px;
   }
   .select-options-scroll {
@@ -108,7 +159,7 @@
     background: #aa6969;
   }
   .select-options-list {
-    background: #c5c5c5;
+    background: #c5ffc5;
     padding: 0px 0px 0px 0px;
   }
   .select-options__value {
@@ -126,46 +177,47 @@
     }
   }
   // написаный класс
+  // ??? не раб стрелка вниз изза фона по умолчанию, который не могу найти ???
   &.form-block__select {
     .select-title {
       font-style: italic;
-      background-color: #b1b1b1;
+      background-color: #ffb1b1;
+    }
+    .select-title__arrow {
+      // content: "";
+      // top: 100%;
+      // left: 50%;
+      // width: 0;
+      // width: 50px;
+      // height: 0;
+      // margin-left: -15px;
+      top: auto;
+      bottom: -50%;
+      height: 100%;
+      border: 25px solid #fff;
+      border-top-color: #8f8c8c;
+      // border-top: 25px solid #0f0;
     }
     .select-options {
       background-color: #feffbc;
     }
+    .select-options-scroll {
+      max-height: 80px;
+      max-height: 100px;
+      overflow: auto;
+      // overflow: hidden;
+      background: #7a7a7a !important;
+      background: #7a7a7a;
+    }
+    .select-options-list {
+      background: #b6adad !important;
+      background: #b6adad;
+      padding: 0px 0px 0px 0px;
+    }
   }
 }
-//</SELECT>====================================================================================================
 
-//<INPUT (inp+tab)>====================================================================================================
-input[type="text"],
-input[type="email"],
-input[type="tel"],
-textarea {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-}
-.input {
-  border: 1px solid #000;
-  height: 50px;
-  border-radius: 0 !important;
-  margin: 0px 0px 20px 0px;
-  width: 100%;
-  display: block;
-  padding: 0px 20px;
-  &.focus {
-  }
-  &.err {
-    border: 1px solid red;
-  }
-}
-textarea.input {
-  resize: none;
-  padding: 0px 0px;
-}
-//</INPUT>====================================================================================================
+//</SELECT>====================================================================================================
 
 //<CHECK (chk+tab)>====================================================================================================
 .check {
