@@ -26,8 +26,14 @@
         <div class="container">
           <!-- popap - всплывающие окна, уже сделаны, настроены, нужны доп. визуал стили и вызвать  -->
           <!-- вызов - добавить класс pl(popap link) + в href="" написать #(диес) и имя popap(callback).-->
-          <!-- продолжение >> в popup.html и popup.js -->
+          <!-- продолжение >> в popup.html и script.js(~84-174) -->
           <a href="#callback" class="block__link pl">Попап</a>
+          <!-- попап с видео -->
+          <!-- data-vid - ссылка на видео(или код) -->
+          <!-- в верхнем правом углу, не свёрстаный крестик -->
+          <a href="#video" data-vid="OsF9H7yRnvU" class="block__link pl"
+            >Попап с видео</a
+          >
           <br />
           <br />
           <!-- tabуляция - вкладки, при нажатии на которые попеременно появляется контент -->
@@ -115,10 +121,23 @@
               />
               <!-- ??? не раб такая вложеность inputов на .form__label и .form__error ??? -->
               <!-- Емаил(валидация) -->
-              <!-- .email прописан в forms.scss.(inp+tab ~141-168) -->
-              <input
+              <!-- .email прописан в forms.scss.(inp+tab ~65) и forms.js()-->
+              <!-- <input
                 autocomplete="off"
                 type="text"
+                name="form[]"
+                data-value="Введи email"
+                data-error="Текст ошибки: email"
+                class="input l email req"
+              /> -->
+            </div>
+            <!-- Емаил(валидация) -->
+            <div class="form-block__item">
+              <!-- .email прописан в forms.scss.(inp+tab ~65) и forms.js(~554)-->
+              <!-- ??? не раб маска на email -->
+              <input
+                autocomplete="off"
+                type="email"
                 name="form[]"
                 data-value="Введи email"
                 data-error="Текст ошибки: email"
@@ -126,8 +145,9 @@
               />
             </div>
             <!-- телефон -->
-            <!-- ??? не раб заполнение при нажатии(+38(999) 999 9999) ??? -->
             <div class="form-block__item">
+              <!-- для работы маски(шаблона), подкл библ inputmask.bundle, добав .phone, меняем в forms.js шаблон на нужный ($(this).inputmask("+7(999) 999 9999",)  -->
+              <!-- .phone прописан в forms.scss(inp+tab ~56) и forms.js(inp+tab ~509-552+) -->
               <input
                 autocomplete="off"
                 type="tel"
@@ -186,6 +206,44 @@
                 <option value="7">Пункт №7</option>
               </select>
             </div>
+            <!-- ползунки выбора  -->
+            <div class="form-block__item">
+              <!-- подкл с помощью JS.txt в js.html - библ. ui -->
+              <!-- готовый код с проекта фриПоЖизн, работает с подвязкой на forms.js(~680-742) и forms.scss(~372-494) -->
+              <div class="category-params-item-price">
+                <div class="category-params-item-price-table table">
+                  <div class="cell">
+                    <input type="text" name="form[]" id="rangefrom" />
+                  </div>
+                  <div class="cell">
+                    <input type="text" name="form[]" id="rangeto" />
+                  </div>
+                </div>
+                <div id="range" class="category-params-item-price-range"></div>
+              </div>
+            </div>
+            <!-- рейтинг -->
+            <div class="form-block__item">
+              <!-- подвязка forms.js(~634-665) и forms.scss(~284-331) -->
+              <div class="rating-block">
+                <!-- доп .edit - возможность указывать оценку -->
+                <div class="rating edit">
+                  <div class="rating__line"></div>
+                  <div class="rating__activeline"></div>
+                  <!-- value="" оценка в звёздах -->
+                  <input value="3.5" type="hidden" name="rating" />
+                  <div class="stars">
+                    <span class="star"><i>Ужасно</i></span>
+                    <span class="star"><i>Плохо</i></span>
+                    <span class="star"><i>Нормально</i></span>
+                    <span class="star"><i>Хорошо</i></span>
+                    <span class="star"><i>Отлично</i></span>
+                  </div>
+                </div>
+                <!-- оценка в цифрах -->
+                <div class="rating__value">3.5</div>
+              </div>
+            </div>
             <!-- кнопка -->
             <div class="form-block__item">
               <!-- .btn прописан в forms.scss.(btn+tab ~32-41) -->
@@ -198,6 +256,23 @@
           </form>
           <br />
           <br />
+          <!-- галерея -->
+          <div class="block__gallery gallery-block gallery">
+            <!-- доп к родителю .gallery - зум при нажатии, перемотка. В a>href - картинку(можно другую, большую)-->
+            <!-- редак в baguetteBox.scss и baguetteBox.js -->
+            <a href="/img/cover.jpg" class="gallery-block__item">
+              <img src="/img/cover.jpg" alt=""
+            /></a>
+            <a href="/img/cover.jpg" class="gallery-block__item">
+              <img src="/img/cover.jpg" alt=""
+            /></a>
+            <a href="/img/cover.jpg" class="gallery-block__item">
+              <img src="/img/cover.jpg" alt=""
+            /></a>
+            <a href="/img/cover.jpg" class="gallery-block__item">
+              <img src="/img/cover.jpg" alt=""
+            /></a>
+          </div>
         </div>
       </div>
       <!-- подкл доп файлов - подвал -->

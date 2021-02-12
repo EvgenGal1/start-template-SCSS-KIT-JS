@@ -536,7 +536,7 @@ function forms() {
   $.each($("input.phone"), function (index, val) {
     $(this).attr("type", "tel");
     $(this).focus(function () {
-      $(this).inputmask("+38(999) 999 9999", {
+      $(this).inputmask("+7(999) 999 9999", {
         clearIncomplete: true,
         clearMaskOnLostFocus: true,
         onincomplete: function () {
@@ -571,6 +571,29 @@ function forms() {
   $("input.num").focusout(function (event) {
     maskclear($(this));
   });
+
+  // ??? не раб маска на email
+  $.each($("input.email"), function (index, val) {
+    $(this).attr("type", "email");
+    $(this).focus(function () {
+      $(this).inputmask("123", {
+        clearIncomplete: true,
+        placeholder: "",
+        clearMaskOnLostFocus: true,
+        onincomplete: function () {
+          maskclear($(this));
+        },
+      });
+      $(this).addClass("focus");
+      $(this).parent().addClass("focus");
+      $(this).parent().removeClass("err");
+      $(this).removeClass("err");
+    });
+  });
+  $("input.email").focusout(function (event) {
+    maskclear($(this));
+  });
+
   /*
 	$.each($('input.date'), function(index, val) {
 		$(this).focus(function(){

@@ -208,3 +208,15 @@
     transform: scale(1);
   }
 }
+
+.block__gallery {
+}
+.gallery-block {
+}
+.gallery-block__item {
+  display: inline-block;
+  width: 150px;
+  img {
+    max-width: 100%;
+  }
+}
