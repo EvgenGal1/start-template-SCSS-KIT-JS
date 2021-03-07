@@ -1,6 +1,8 @@
       подкл библ
 //@prepros-append ../../js/fancybox/jquery.fancybox.pack.js
+    свой код
 //@prepros-append jquery.form.min.js
+    всплывающие подсказки
 //@prepros-append jquery.popover.min.js
     задание маски(шаблона) поля input(тел.,)
 //@prepros-append jquery.inputmask.bundle.min.js
@@ -8,10 +10,13 @@
 //@prepros-append jquery.nicescroll.min.js
     для работы(визуал эфек) на тач-скринах(скрол)
 //@prepros-append jquery.ui.touch-punch.min.js
-
+    для отсеживания колесика мыши с подключением функций
 //@prepros-append jquery.mousewheel.min.js
+    увелич input в размере в завис от задан текста
 //@prepros-append jquery.autosize.input.min.js
+    увелич text-area в размере в завис от задан текста
 //@prepros-append jquery.ns-autogrow.min.js
+    паралакс эф. тяжелая. лучше писать самому или выбирать
 //@prepros-append jquery.parallax.js
     галлерея
 //@prepros-append baguetteBox.js
